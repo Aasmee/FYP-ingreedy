@@ -41,7 +41,7 @@ class LoginState extends State<Login> {
 
       try {
         final response = await http.post(
-          Uri.parse('${ApiConfig.baseUrl}/auth/login'),
+          Uri.parse('${ApiConfig.baseUrl}/api/auth/login'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode({
             'email': _emailController.text,
@@ -147,7 +147,7 @@ class LoginState extends State<Login> {
                         Textfield(
                           label: 'Email',
                           labelColor: Colors.white,
-                          hintText: '',
+                          hintText: 'Email',
                           validator: _validateEmail,
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
@@ -156,7 +156,7 @@ class LoginState extends State<Login> {
                         Textfield(
                           label: 'Password',
                           labelColor: Colors.white,
-                          hintText: '',
+                          hintText: 'Password',
                           controller: _passwordController,
                           isPassword: true,
                           validator: _validatePassword,

@@ -32,7 +32,7 @@ class _RegisterState extends State<Register> {
 
       try {
         final res = await http.post(
-          Uri.parse('${ApiConfig.baseUrl}/register'),
+          Uri.parse('${ApiConfig.baseUrl}/api/register'),
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({
             'username': usernameCtrl.text,
@@ -113,6 +113,7 @@ class _RegisterState extends State<Register> {
                           labelColor: Colors.white,
                           controller: usernameCtrl,
                           validator: _validate,
+                          hintText: 'Username',
                         ),
                         const SizedBox(height: 9),
                         Textfield(
@@ -121,6 +122,7 @@ class _RegisterState extends State<Register> {
                           controller: emailCtrl,
                           keyboardType: TextInputType.emailAddress,
                           validator: _validate,
+                          hintText: 'Email',
                         ),
                         const SizedBox(height: 9),
                         Textfield(
@@ -129,6 +131,7 @@ class _RegisterState extends State<Register> {
                           controller: passCtrl,
                           isPassword: true,
                           validator: _validate,
+                          hintText: 'Password',
                         ),
                         const SizedBox(height: 20),
                         _isLoading

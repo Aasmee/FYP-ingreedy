@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthService {
   Future<String?> login(String email, String password) async {
     final response = await http.post(
-      Uri.parse('${ApiConfig.baseUrl}/login'),
+      Uri.parse('${ApiConfig.baseUrl}/api/login'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'email': email, 'password': password}),
     );
@@ -29,7 +29,7 @@ class AuthService {
     String password,
   ) async {
     final response = await http.post(
-      Uri.parse('${ApiConfig.baseUrl}/register'),
+      Uri.parse('${ApiConfig.baseUrl}/api/register'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
         'username': username,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ingreedy_app/screens/Recipe/recipe_pages.dart';
 import 'package:ingreedy_app/screens/createpost.dart';
-import 'package:ingreedy_app/screens/home.dart';
+import 'package:ingreedy_app/screens/Home/home.dart';
 import 'package:ingreedy_app/screens/pantry.dart';
 import 'package:ingreedy_app/screens/profile.dart';
-import 'package:ingreedy_app/screens/recipe.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -17,7 +17,7 @@ class NavBarState extends State<NavBar> {
 
   final List<Widget> _pages = [
     Home(),
-    Recipe(),
+    RecipesPage(),
     CreatePost(),
     Pantry(),
     ProfilePage(),
